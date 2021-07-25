@@ -11,7 +11,7 @@ from initialization import perturbed_bad_init, perturbed_warm_init, gaussian_war
 grad_f    = {'perturbed' : grad_f_perturbed, 'original' : grad_f_gaussian}
 f         = {'perturbed' : f_perturbed,      'original' : f_gaussian}
 init_dist = {('perturbed', 'warm') : perturbed_warm_init, ('perturbed', 'bad') : perturbed_bad_init,
-             ('gaussian', 'warm')  : gaussian_warm_init,  ('gaussian', 'bad')  : gaussian_bad_init}
+             ('original', 'warm')  : gaussian_warm_init,  ('original', 'bad')  : gaussian_bad_init}
 plot_f    = {'acc' : plot_accept_rate, 'mix' : plot_mixing_time}
 
 
@@ -32,8 +32,8 @@ if __name__ == '__main__':
     parser = get_parser()
     args = parser.parse_args()
 
-    N = 200
-    nb_iters = 40000
+    N = 2
+    nb_iters = 4
     quantile = 0.9
     error = 0.05
 
@@ -66,8 +66,8 @@ if __name__ == '__main__':
                     return f[args.target](x, L=L, m=m)
 
 
-                accept, xd, x_norm= mala(init, grad_f_local, f_local, nb_iters=nb_iters,
-                                         h_mala = h_const/(d**gamma), verbose = False)
+                accept, xd = mala(init, grad_f_local, f_local, nb_iters=nb_iters,
+                                  h_mala = h_const/(d**gamma), verbose = False)
                 accept_rate[i,j] = np.mean(accept[(nb_iters)//2:])
 
                 mixing_tmp = np.zeros(N)+nb_iters
@@ -103,8 +103,8 @@ if __name__ == '__main__':
                     return f[args.target](x, L=L, m=m)
 
 
-                accept, xd, x_norm= mala(init, grad_f_local, f_local, nb_iters=nb_iters,
-                                         h_mala = h_const/(L**gamma*np.sqrt(d)), verbose = False)
+                accept, xd, = mala(init, grad_f_local, f_local, nb_iters=nb_iters,
+                                   h_mala = h_const/(L**gamma*np.sqrt(d)), verbose = False)
                 accept_rate[i,j] = np.mean(accept[(nb_iters//2):])
 
                 mixing_tmp = np.zeros(N)+nb_iters
@@ -115,5 +115,5 @@ if __name__ == '__main__':
                             mixing_tmp[n] = iter
                             break
                 mixing_time[i,j] = np.mean(mixing_tmp)
-                
+
         plot_f[args.plot](accept_rate, Ls, gpowers, title, xlabel, ylim)
