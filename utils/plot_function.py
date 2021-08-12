@@ -18,7 +18,7 @@ color_map = {0.10: colors[0],
              1.50: colors[-1]}
 linewidth = 2
 markersize = 7.5
-markers = ['^', 'X', 'd', 'P', 'v']
+markers = ['^', 'X', 'd', 'P', 'v', '*']
 
 
 def plot_accept_rate(accept_rate, ds, dpowers, title, xlabel, ylim):
@@ -50,7 +50,7 @@ def plot_accept_rate(accept_rate, ds, dpowers, title, xlabel, ylim):
     plt.legend(bbox_to_anchor=(1, 0.45),loc='center right',prop={"size":8},markerscale=0.5)
 
     plt.tight_layout()
-    plt.savefig(os.path.join('./results', title), dpi=300)
+    plt.savefig(os.path.join('../results', title), dpi=300)
 
 
 
@@ -83,7 +83,7 @@ def plot_mixing_time(mixing_time, ds, dpowers, title, xlabel, ylim):
     plt.legend(bbox_to_anchor=(1, 0.2),loc='center right',prop={"size":8},markerscale=0.5)
 
     plt.tight_layout()
-    plt.savefig(os.path.join('./results', title), dpi=300)
+    plt.savefig(os.path.join('../results', title), dpi=300)
     plt.show()
 
 

@@ -47,8 +47,8 @@ ylim_dict = {('perturbed', 'dimension', 'warm', 'acc') : 1.05,
 
 h_const_dict = {('perturbed', 'dimension', 'warm', 'acc') : 2.5,
                 ('perturbed', 'dimension', 'warm', 'mix') : 2.5,
-                ('perturbed', 'dimension', 'bad',  'acc') : 2.,
-                ('perturbed', 'dimension', 'bad',  'mix') : 2.,
+                ('perturbed', 'dimension', 'bad',  'acc') : 10.,
+                ('perturbed', 'dimension', 'bad',  'mix') : 10.,
                 ('perturbed', 'condition', 'warm', 'acc') : 2.5,
                 ('perturbed', 'condition', 'warm', 'mix') : 2.5,
 

@@ -12,7 +12,7 @@ def neglog_density_normal(x, mean=0., sigma=1.):
     return np.sum((x - mean)**2, axis=1) / 2 / sigma**2
 
 
-def mala(x_init, grad_f, f, nb_iters=1000, h_mala = None, verbose = True):
+def mala(x_init, grad_f, f, nb_iters=1000, h_mala = None, verbose = False):
     """
     MALA algorithm
     :param x_init:    initialization  (N, d)
@@ -21,7 +21,7 @@ def mala(x_init, grad_f, f, nb_iters=1000, h_mala = None, verbose = True):
     :param nb_iters:  number of iterations
     :param h_mala:    step size h
     :param verbose:   show progress bar or not
-    :return:          acceptance rate, trace of the last dimension xd
+    :return:          acceptance rate, and the trace of the last dimension xd
     """
     N, d = x_init.shape
 
@@ -62,3 +62,29 @@ def mala(x_init, grad_f, f, nb_iters=1000, h_mala = None, verbose = True):
 
 
     return accept_rate_all, xd_all
+
+
+
+def ula(x_init, grad_f, nb_iters=1000, h_ula = None, verbose = False):
+    """
+    ULA algorithm
+    :param x_init:    initialization  (N, d)
+    :param grad_f:    gradient of the negative log density
+    :param nb_iters:  number of iterations
+    :param h_ula:    step size h
+    :param verbose:   show progress bar or not
+    :return:          acceptance rate, and the last state of the chain
+    """
+    N, d = x_init.shape
+
+    x_curr = x_init.copy()
+
+    if h_ula is None:
+        raise ValueError("Step size undefined")
+
+
+    for i in tqdm(range(nb_iters - 1) if verbose else range(nb_iters-1)):
+
+        x_curr += -h_ula * grad_f(x_curr) + np.sqrt(2*h_ula)*np.random.randn(N,d)
+
+    return x_curr

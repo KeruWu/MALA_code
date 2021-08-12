@@ -1,12 +1,12 @@
 
 import argparse
-from settings import *
+from utils.settings import *
 from scipy.stats import norm
 
-from MALA import mala
-from plot_function import plot_accept_rate, plot_mixing_time
-from target_distribution import f_perturbed, grad_f_perturbed, f_gaussian, grad_f_gaussian
-from initialization import perturbed_bad_init, perturbed_warm_init, gaussian_warm_init, gaussian_bad_init
+from utils.Langevin_algorithms import mala
+from utils.plot_function import plot_accept_rate, plot_mixing_time
+from utils.target_distribution import f_perturbed, grad_f_perturbed, f_gaussian, grad_f_gaussian
+from utils.initialization import perturbed_bad_init, perturbed_warm_init, gaussian_warm_init, gaussian_bad_init
 
 grad_f    = {'perturbed' : grad_f_perturbed, 'original' : grad_f_gaussian}
 f         = {'perturbed' : f_perturbed,      'original' : f_gaussian}

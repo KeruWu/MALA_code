@@ -1,5 +1,5 @@
 import numpy as np
-from MALA import mala
+from Langevin_algorithms import mala
 
 def perturbed_warm_init(N, d, L, m, delta=1./40):
     """

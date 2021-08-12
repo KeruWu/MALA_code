@@ -1,5 +1,4 @@
 import numpy as np
-from MALA import mala
 
 def f_perturbed(x, L, m, delta=1./40):
     """
