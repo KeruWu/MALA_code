@@ -43,6 +43,7 @@ if __name__ == '__main__':
     xlabel = xlabel_dict[args.dependency]
     ylim = ylim_dict[(args.target, args.dependency, args.init, args.plot)]
     h_const = h_const_dict[(args.target, args.dependency, args.init, args.plot)]
+    emph = emph_dict[(args.target, args.dependency, args.init, args.plot)]
 
     np.random.seed(17)
 
@@ -78,7 +79,7 @@ if __name__ == '__main__':
                             break
                 mixing_time[i,j] = np.mean(mixing_tmp)
 
-        plot_f[args.plot](accept_rate, ds, dpowers, title, xlabel, ylim)
+        plot_f[args.plot](accept_rate, ds, dpowers, title, xlabel, ylim, emph)
 
 
     else:
@@ -116,4 +117,4 @@ if __name__ == '__main__':
                             break
                 mixing_time[i,j] = np.mean(mixing_tmp)
 
-        plot_f[args.plot](accept_rate, Ls, gpowers, title, xlabel, ylim)
+        plot_f[args.plot](accept_rate, Ls, gpowers, title, xlabel, ylim, emph)

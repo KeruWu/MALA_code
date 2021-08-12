@@ -54,5 +54,5 @@ if __name__ == '__main__':
                         break
             mixing_time[i,j] = np.mean(mixing_tmp)
 
-    plot_accept_rate(accept_rate, ds, dpowers, 'perturbed_dimension_acc_bad_ula+mala', "Dimension $d$", ylim=1.05)
-    plot_mixing_time(mixing_time, ds, dpowers, 'perturbed_dimension_mix_bad_ula+mala', "Dimension $d$", ylim=5000)
+    plot_accept_rate(accept_rate, ds, dpowers, 'perturbed_dimension_acc_bad_ula+mala', "Dimension $d$", ylim=1.05, emph=0.5)
+    plot_mixing_time(mixing_time, ds, dpowers, 'perturbed_dimension_mix_bad_ula+mala', "Dimension $d$", ylim=5000, emph=0.5)

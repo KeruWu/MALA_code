@@ -14,19 +14,19 @@ ds_dict = {('perturbed', 'dimension', 'warm', 'acc') : 2**np.arange(1, 23, 3),
            ('original',  'condition', 'warm', 'acc') : np.array([2, 4, 8, 16, 32, 64, 96]),
            ('original',  'condition', 'warm', 'mix') : np.array([2, 4, 8, 16, 32, 64, 96])}
 
-dpowers_dict = {('perturbed', 'dimension', 'warm', 'acc') : np.array([0.2, 0.35, 0.50, 0.65, 0.80]),
-                ('perturbed', 'dimension', 'warm', 'mix') : np.array([0.2, 0.35, 0.50, 0.65, 0.80]),
-                ('perturbed', 'dimension', 'bad',  'acc') : np.array([0.5, 0.75, 1.00, 1.25, 1.50]),
-                ('perturbed', 'dimension', 'bad',  'mix') : np.array([0.5, 0.75, 1.00, 1.25, 1.50]),
-                ('perturbed', 'condition', 'warm', 'acc') : np.array([0.5, 0.75, 1.00, 1.25, 1.50]),
-                ('perturbed', 'condition', 'warm', 'mix') : np.array([0.5, 0.75, 1.00, 1.25, 1.50]),
+dpowers_dict = {('perturbed', 'dimension', 'warm', 'acc') : np.array([0.20, 0.35, 0.50, 0.65, 0.80]),
+                ('perturbed', 'dimension', 'warm', 'mix') : np.array([0.20, 0.35, 0.50, 0.65, 0.80]),
+                ('perturbed', 'dimension', 'bad',  'acc') : np.array([0.50, 0.75, 1.00, 1.25, 1.50]),
+                ('perturbed', 'dimension', 'bad',  'mix') : np.array([0.50, 0.75, 1.00, 1.25, 1.50]),
+                ('perturbed', 'condition', 'warm', 'acc') : np.array([0.50, 0.75, 1.00, 1.25, 1.50]),
+                ('perturbed', 'condition', 'warm', 'mix') : np.array([0.50, 0.75, 1.00, 1.25, 1.50]),
 
-                ('original',  'dimension', 'warm', 'acc') : np.array([0.1, 0.2, 0.33, 0.4, 0.5]),
-                ('original',  'dimension', 'warm', 'mix') : np.array([0.1, 0.2, 0.33, 0.4, 0.5]),
-                ('original',  'dimension', 'bad',  'acc') : np.array([0.2, 0.33, 0.5, 0.66, 0.8]),
-                ('original',  'dimension', 'bad',  'mix') : np.array([0.2, 0.33, 0.5, 0.66, 0.8]),
-                ('original',  'condition', 'warm', 'acc') : np.array([0.5, 0.75, 1, 1.25, 1.5]),
-                ('original',  'condition', 'warm', 'mix') : np.array([0.5, 0.75, 1, 1.25, 1.5])}
+                ('original',  'dimension', 'warm', 'acc') : np.array([0.10, 0.20, 0.33, 0.40, 0.50]),
+                ('original',  'dimension', 'warm', 'mix') : np.array([0.10, 0.20, 0.33, 0.40, 0.50]),
+                ('original',  'dimension', 'bad',  'acc') : np.array([0.20, 0.33, 0.50, 0.66, 0.80]),
+                ('original',  'dimension', 'bad',  'mix') : np.array([0.20, 0.33, 0.50, 0.66, 0.80]),
+                ('original',  'condition', 'warm', 'acc') : np.array([0.50, 0.75, 1.00, 1.25, 1.50]),
+                ('original',  'condition', 'warm', 'mix') : np.array([0.50, 0.75, 1.00, 1.25, 1.50])}
 
 xlabel_dict = {'dimension' : "Dimension $d$",
                'condition' : "Condition Number $\kappa$"}
@@ -58,3 +58,17 @@ h_const_dict = {('perturbed', 'dimension', 'warm', 'acc') : 2.5,
                 ('original',  'dimension', 'bad',  'mix') : 1.5,
                 ('original',  'condition', 'warm', 'acc') : 1.,
                 ('original',  'condition', 'warm', 'mix') : 1.}
+
+emph_dict = {('perturbed', 'dimension', 'warm', 'acc') : 0.5,
+             ('perturbed', 'dimension', 'warm', 'mix') : 0.5,
+             ('perturbed', 'dimension', 'bad',  'acc') : 1.,
+             ('perturbed', 'dimension', 'bad',  'mix') : 1.,
+             ('perturbed', 'condition', 'warm', 'acc') : 1.,
+             ('perturbed', 'condition', 'warm', 'mix') : 1.,
+
+             ('original',  'dimension', 'warm', 'acc') : 0.33,
+             ('original',  'dimension', 'warm', 'mix') : 0.33,
+             ('original',  'dimension', 'bad',  'acc') : 0.5,
+             ('original',  'dimension', 'bad',  'mix') : 0.5,
+             ('original',  'condition', 'warm', 'acc') : 1.,
+             ('original',  'condition', 'warm', 'mix') : 1.}

@@ -21,7 +21,7 @@ markersize = 7.5
 markers = ['^', 'X', 'd', 'P', 'v', '*']
 
 
-def plot_accept_rate(accept_rate, ds, dpowers, title, xlabel, ylim):
+def plot_accept_rate(accept_rate, ds, dpowers, title, xlabel, ylim, emph):
     """
     Function for plotting the acceptance rate
     :param accept_rate:   acceptance rate
@@ -30,12 +30,11 @@ def plot_accept_rate(accept_rate, ds, dpowers, title, xlabel, ylim):
     :param title:         title of the plot
     :param xlabal:        label of the x axis
     """
-    markers = ['^', 'X', 'd', 'P', 'v']
 
     plt.figure(figsize=(6,4))
 
     for j, dpower in enumerate(dpowers):
-        if dpower != 1:
+        if dpower != emph:
             plt.semilogx(ds[0:accept_rate.shape[0]], accept_rate[:,j], "o:", alpha = 1., linewidth=linewidth,
                          label=r'$\gamma = %0.2f$' %(dpower), marker = markers[j], markersize=markersize,
                          color = color_map[dpower])
@@ -55,7 +54,7 @@ def plot_accept_rate(accept_rate, ds, dpowers, title, xlabel, ylim):
 
 
 
-def plot_mixing_time(mixing_time, ds, dpowers, title, xlabel, ylim):
+def plot_mixing_time(mixing_time, ds, dpowers, title, xlabel, ylim, emph):
     """
     Function for plotting the mixing time
     :param mixing_time:   mixing time
@@ -69,7 +68,7 @@ def plot_mixing_time(mixing_time, ds, dpowers, title, xlabel, ylim):
 
     plt.figure(figsize=(6,4))
     for j, dpower in enumerate(dpowers):
-        if dpower != 1:
+        if dpower != emph:
             plt.plot(ds[:], mixing_time[:,j], "o:", alpha = 1., linewidth=linewidth,
                      label=r'$\gamma = %0.2f$' %(dpower), marker = markers[j], markersize=markersize,
                      color = color_map[dpower])
