@@ -83,7 +83,7 @@ def ula(x_init, grad_f, nb_iters=1000, h_ula = None, verbose = False):
         raise ValueError("Step size undefined")
 
 
-    for i in tqdm(range(nb_iters - 1) if verbose else range(nb_iters-1)):
+    for i in (tqdm(range(nb_iters - 1)) if verbose else range(nb_iters-1)):
 
         x_curr += -h_ula * grad_f(x_curr) + np.sqrt(2*h_ula)*np.random.randn(N,d)
 
