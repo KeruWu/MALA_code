@@ -41,7 +41,7 @@ def MH_each(N, d, delta):
         return x + 0.5/((d-1)**(0.25-delta)) * np.sin((d-1)**(0.25-delta)*x)
     x = np.zeros((N, d-1))
     for i in range(d-1):
-        _, x1, _= mala(np.array([[x[0,i]]]), grad_f_tmp, f_tmp, nb_iters=2*N, h_mala = 1., verbose=False)
+        _, x1 = mala(np.array([[x[0,i]]]), grad_f_tmp, f_tmp, nb_iters=2*N, h_mala = 1., verbose=False)
         x[:,i] = x1[0,N:]
     x = x
     return x
