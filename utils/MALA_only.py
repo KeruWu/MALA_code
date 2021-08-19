@@ -71,15 +71,19 @@ if __name__ == '__main__':
                                   h_mala = h_const/(d**gamma), verbose = False)
                 accept_rate[i,j] = np.mean(accept[(nb_iters)//2:])
 
-                mixing_tmp = np.zeros(N)+nb_iters
-                for n in range(N):
-                    for iter in range(10, nb_iters, 10):
-                        if np.abs(np.quantile(xd[n,:iter], quantile) - norm.isf(1-quantile)) < error:
-                            mixing_tmp[n] = iter
-                            break
-                mixing_time[i,j] = np.mean(mixing_tmp)
+                if args.plot == "mix":
+                    mixing_tmp = np.zeros(N)+nb_iters
+                    for n in range(N):
+                        for iter in range(10, nb_iters, 20):
+                            if np.abs(np.quantile(xd[n,:iter], quantile) - norm.isf(1-quantile)) < error:
+                                mixing_tmp[n] = iter
+                                break
+                    mixing_time[i,j] = np.mean(mixing_tmp)
 
-        plot_f[args.plot](accept_rate, ds, dpowers, title, xlabel, ylim, emph)
+        if args.plot == "acc":
+            plot_f[args.plot](accept_rate, ds, dpowers, title, xlabel, ylim, emph)
+        else:
+            plot_f[args.plot](mixing_time, ds, dpowers, title, xlabel, ylim, emph)
 
 
     else:
@@ -109,12 +113,16 @@ if __name__ == '__main__':
                 accept_rate[i,j] = np.mean(accept[(nb_iters//2):])
 
                 mixing_tmp = np.zeros(N)+nb_iters
-                for n in range(N):
-                    for iter in range(10, nb_iters, 20):
+                if args.plot == "mix":
+                    for n in range(N):
+                        for iter in range(10, nb_iters, 20):
 
-                        if np.abs(np.quantile(xd[n,:iter], quantile) - norm.isf(1-quantile)) < error:
-                            mixing_tmp[n] = iter
-                            break
-                mixing_time[i,j] = np.mean(mixing_tmp)
+                            if np.abs(np.quantile(xd[n,:iter], quantile) - norm.isf(1-quantile)) < error:
+                                mixing_tmp[n] = iter
+                                break
+                    mixing_time[i,j] = np.mean(mixing_tmp)
 
-        plot_f[args.plot](accept_rate, Ls, gpowers, title, xlabel, ylim, emph)
+        if args.plot == "acc":
+            plot_f[args.plot](accept_rate, ds, dpowers, title, xlabel, ylim, emph)
+        else:
+            plot_f[args.plot](mixing_time, ds, dpowers, title, xlabel, ylim, emph)
