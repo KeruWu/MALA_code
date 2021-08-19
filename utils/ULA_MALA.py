@@ -25,8 +25,8 @@ if __name__ == '__main__':
     ds = 2**np.arange(6, 13)
     dpowers = np.array([0.2, 0.33, 0.5, 0.66, 0.75, 1.0])
 
-    N = 100
-    nb_iters = 20
+    N = 200
+    nb_iters = 20000
     delta = 1/40.
 
     quantile = 0.9

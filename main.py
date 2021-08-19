@@ -12,7 +12,7 @@ def get_parser():
 
 cmd_dict = {
     (1, 'a') : "python utils/MALA_only.py -target perturbed -init warm -dependency dimension -plot acc",
-    (1, 'b') : "python utils/MALA_only.py -target perturbed -init warm -dependency dimension -plot mix",
+    (1, 'b') : ["python", "utils/MALA_only.py", "-target", "perturbed", "-init", "warm", "-dependency", "dimension", "-plot", "mix"],
     (1, 'c') : "python utils/MALA_only.py -target perturbed -init bad -dependency dimension -plot acc",
     (1, 'd') : "python utils/MALA_only.py -target perturbed -init bad -dependency dimension -plot mix",
     (2, 'a') : ["python", "utils/ULA_MALA.py", "-plot", "acc"],
