@@ -2,9 +2,9 @@
 import numpy as np
 import argparse
 from scipy.stats import norm
-from utils.Langevin_algorithms import mala, ula
-from utils.target_distribution import f_perturbed, grad_f_perturbed
-from utils.plot_function import plot_accept_rate, plot_mixing_time
+from Langevin_algorithms import mala, ula
+from target_distribution import f_perturbed, grad_f_perturbed
+from plot_function import plot_accept_rate, plot_mixing_time
 
 
 def get_parser():
