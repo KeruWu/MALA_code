@@ -8,17 +8,17 @@ from plot_function import plot_accept_rate, plot_mixing_time
 from target_distribution import f_perturbed, grad_f_perturbed, f_gaussian, grad_f_gaussian
 from initialization import perturbed_bad_init, perturbed_warm_init, gaussian_warm_init, gaussian_bad_init
 
-grad_f    = {'perturbed' : grad_f_perturbed, 'original' : grad_f_gaussian}
-f         = {'perturbed' : f_perturbed,      'original' : f_gaussian}
+grad_f    = {'perturbed' : grad_f_perturbed, 'gaussian' : grad_f_gaussian}
+f         = {'perturbed' : f_perturbed,      'gaussian' : f_gaussian}
 init_dist = {('perturbed', 'warm') : perturbed_warm_init, ('perturbed', 'bad') : perturbed_bad_init,
-             ('original', 'warm')  : gaussian_warm_init,  ('original', 'bad')  : gaussian_bad_init}
+             ('gaussian', 'warm')  : gaussian_warm_init,  ('gaussian', 'bad')  : gaussian_bad_init}
 plot_f    = {'acc' : plot_accept_rate, 'mix' : plot_mixing_time}
 
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-target", type=str, choices=['perturbed', 'original'], required=True,
-                        help='Target is the perturbed Gaussian or the original Gaussian')
+    parser.add_argument("-target", type=str, choices=['perturbed', 'gaussian'], required=True,
+                        help='Target is the perturbed Gaussian or the gaussian Gaussian')
     parser.add_argument("-init", type=str, choices=['warm', 'bad'],
                         help="Warm or bad (feasible) initialization")
     parser.add_argument("-dependency", type=str, choices=['dimension', 'condition'],
