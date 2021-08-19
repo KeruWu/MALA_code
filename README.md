@@ -2,13 +2,11 @@
 
 Code for the paper "Minimax mixing time of MALA". 
 
-Run ```python MALA_only.py``` with the following four flags:
+Run ```main.py``` with the following two flags.
 
 ```
--target        Target is the perturbed Gaussian or the original Gaussian',     Either 'perturbed' or 'original'.
--init          Warm or bad (feasible) initialization.                          Either 'warm' or 'bad'.
--dependency    Dimension dependency or condition number dependency.            Either 'dimension' or 'condition'.
--plot          Plot acceptance rate or mixing time.                            Either 'acc' or 'mix'.
+-fig        Figure number in the paper. 
+-subfig     Subfigure number in the figure. 
 ```
 
-Run ```python ULA_MALA.py``` for experiments on ULA+MALA.
+For example, to get Figure 2(a), use```python main.py -fig 2 -subfig a```.
