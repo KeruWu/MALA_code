@@ -19,12 +19,12 @@ cmd_dict = {
     (2, 'b') : ["python", "utils/ULA_MALA.py", "-plot", "mix"],
     (3, 'a') : ["python", "utils/MALA_only.py", "-target", "perturbed", "-init", "warm", "-dependency", "condition", "-plot", "acc"],
     (3, 'b') : ["python", "utils/MALA_only.py", "-target", "perturbed", "-init", "warm", "-dependency", "condition", "-plot", "mix"],
-    (4, 'a') : ["python", "utils/MALA_only.py", "-target", "original", "-init", "warm", "-dependency", "dimension", "-plot", "acc"],
-    (4, 'b') : ["python", "utils/MALA_only.py", "-target", "original", "-init", "warm", "-dependency", "dimension", "-plot", "mix"],
-    (4, 'c') : ["python", "utils/MALA_only.py", "-target", "original", "-init", "bad", "-dependency", "dimension", "-plot", "acc"],
-    (4, 'd') : ["python", "utils/MALA_only.py", "-target", "original", "-init", "bad", "-dependency", "dimension", "-plot", "mix"],
-    (5, 'a') : ["python", "utils/MALA_only.py", "-target", "original", "-init", "warm", "-dependency", "condition", "-plot", "acc"],
-    (5, 'b') : ["python", "utils/MALA_only.py", "-target", "original", "-init", "warm", "-dependency", "condition", "-plot", "mix"],
+    (4, 'a') : ["python", "utils/MALA_only.py", "-target", "gaussian", "-init", "warm", "-dependency", "dimension", "-plot", "acc"],
+    (4, 'b') : ["python", "utils/MALA_only.py", "-target", "gaussian", "-init", "warm", "-dependency", "dimension", "-plot", "mix"],
+    (4, 'c') : ["python", "utils/MALA_only.py", "-target", "gaussian", "-init", "bad", "-dependency", "dimension", "-plot", "acc"],
+    (4, 'd') : ["python", "utils/MALA_only.py", "-target", "gaussian", "-init", "bad", "-dependency", "dimension", "-plot", "mix"],
+    (5, 'a') : ["python", "utils/MALA_only.py", "-target", "gaussian", "-init", "warm", "-dependency", "condition", "-plot", "acc"],
+    (5, 'b') : ["python", "utils/MALA_only.py", "-target", "gaussian", "-init", "warm", "-dependency", "condition", "-plot", "mix"],
 }
 
 if __name__ == '__main__':
