@@ -32,8 +32,8 @@ if __name__ == '__main__':
     parser = get_parser()
     args = parser.parse_args()
 
-    N = 200
-    nb_iters = 20000
+    N = 2
+    nb_iters = 2
     quantile = 0.9
     error = 0.05
 
